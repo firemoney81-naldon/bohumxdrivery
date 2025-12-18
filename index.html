@@ -1,23 +1,401 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
+ 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "운전자보험 가입기간은 어떻게 설정하는 것이 유리한가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2026년 기준, 도로교통법 개정 주기가 짧아짐에 따라 20년 만기 상품을 선택하여 주기적으로 리모델링하는 것이 트렌드입니다. 장기 보장을 원할 경우 80세 혹은 100세 만기를 선택할 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "운전자보험 가입기간 중 중도 해지 시 불이익이 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "순수보장형의 경우 해약환급금이 없거나 적을 수 있으며, 사고 이력이 발생한 후 재가입 시 심사가 까다로워질 수 있으므로 신중한 결정이 필요합니다."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* 다채롭고 부드러운 현대적 색감 정의 */
+        :root {
+            --primary-bg: #F0F4FF;
+            --secondary-bg: #FFFFFF;
+            --accent-blue: #3A7BD5;
+            --soft-purple: #7F7FD5;
+            --deep-navy: #1A2A6C;
+            --text-main: #2C3E50;
+            --text-sub: #546E7A;
+            --point-red: #E74C3C;
+            --border-color: #E0E7FF;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.8;
+            color: var(--text-main);
+            background-color: var(--primary-bg);
+            margin: 0;
+            padding: 0;
+            word-break: keep-all;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        /* 헤더 디자인 */
+        header {
+            background: linear-gradient(135deg, var(--deep-navy), var(--soft-purple));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-top: 15px;
+        }
+
+        /* 메인 컨텐츠 영역 */
+        main {
+            padding: 40px 0;
+        }
+
+        .content-card {
+            background: var(--secondary-bg);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 2.2em;
+            color: var(--deep-navy);
+            border-left: 6px solid var(--accent-blue);
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            font-size: 1.6em;
+            color: var(--accent-blue);
+            margin-top: 40px;
+        }
+
+        /* 표 디자인 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+        }
+
+        table th, table td {
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #F8FAFF;
+            color: var(--deep-navy);
+        }
+
+        /* 상세 리스트 */
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-list li {
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        /* 입력 폼 섹션 (체류 시간 증대) */
+        .calculator-section {
+            background: #EDF2F7;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .input-group input, .input-group select, .input-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #CBD5E0;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .btn-submit {
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        /* 외부 링크 섹션 */
+        .external-links {
+            background: #F8FAFF;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        .external-links a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 20px;
+            font-size: 0.9em;
+        }
+
+        /* 키워드 클라우드 */
+        .keyword-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .keyword-tag {
+            background: #ECEFF1;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            color: #607D8B;
+        }
+
+        footer {
+            background: var(--deep-navy);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>운전자보험 가입기간 완벽 분석</h1>
+        <p>2026년 도로교통법 개정 반영 및 최적의 보장 기간 설정 가이드</p>
+    </div>
+</header>
+
+<main class="container">
+    <article class="content-card">
+        <h2>운전자보험 가입기간 설정이 중요한 이유</h2>
+        <p>
+            2026년 현재, 자동차 사고와 관련된 법률적 책임은 과거 그 어느 때보다 엄격해지고 있습니다. 특히 자차 보험(자동차보험)이 민사적 책임을 보장한다면, 운전자보험은 형사적 책임과 행정적 책임을 보장하는 핵심적인 역할을 수행합니다. 이때 가장 많은 가입자가 고민하는 요소가 바로 <strong>운전자보험 가입기간</strong>입니다. 보장 기간을 어떻게 설정하느냐에 따라 매월 납입하는 보험료는 물론, 향후 법 개정에 따른 대응력이 결정되기 때문입니다.
+        </p>
+        <p>
+            본 가이드에서는 20년 만기, 80세 만기, 100세 만기 등 다양한 가입 기간의 장단점을 비교하고, 본인의 연령과 운전 습관에 가장 적합한 기간 설정법을 제시합니다.
+        </p>
+    </article>
+
+    <section class="content-card">
+        <h2>나에게 맞는 운전자보험 기간 및 견적 자가 진단</h2>
+        <p>아래 상세 정보를 입력하시면 예상 보장 분석과 가입 기간 추천 리포트를 확인하실 수 있습니다.</p>
+        <div class="calculator-section">
+            <form id="insuranceForm">
+                <div class="input-group">
+                    <label>성함</label>
+                    <input type="text" placeholder="성함을 입력하세요">
+                </div>
+                <div class="input-group">
+                    <label>생년월일 (예: 19900101)</label>
+                    <input type="number" placeholder="8자리 입력">
+                </div>
+                <div class="input-group">
+                    <label>현재 주행 거리 (연간)</label>
+                    <select>
+                        <option>5,000km 미만</option>
+                        <option>5,000km ~ 15,000km</option>
+                        <option>15,000km 이상</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>관심 있는 운전자보험 가입기간</label>
+                    <select>
+                        <option>연단위 갱신형 (1~3년)</option>
+                        <option>장기 세만기 (80세/100세)</option>
+                        <option>장기 년만기 (20년)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>과거 사고 이력 및 우려되는 부분</label>
+                    <textarea rows="4" placeholder="교통사고 처리 지원금, 벌금 등 보장이 필요한 내용을 상세히 기재해주세요."></textarea>
+                </div>
+                <div class="input-group">
+                    <label>휴대폰 번호 (상담 대기번호 발송용)</label>
+                    <input type="tel" placeholder="010-0000-0000">
+                </div>
+                <button type="button" class="btn-submit">상세 분석 결과 보기 및 전문가 상담 신청</button>
+            </form>
+        </div>
+    </section>
+
+    <article class="content-card">
+        <h2>가입 기간별 유형 비교 분석 (2026 기준)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>구분</th>
+                    <th>20년 만기 (년만기)</th>
+                    <th>80세/100세 만기 (세만기)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>보장 기간</td>
+                    <td>가입 시점부터 20년간</td>
+                    <td>지정된 연령(80/100세)까지</td>
+                </tr>
+                <tr>
+                    <td>보험료 수준</td>
+                    <td>상대적으로 저렴함</td>
+                    <td>보장 기간이 길어 상대적으로 높음</td>
+                </tr>
+                <tr>
+                    <td>법 개정 대응</td>
+                    <td>만기 시 새로운 상품으로 교체 용이</td>
+                    <td>중도 해지 시 손해가 커 대응이 어려움</td>
+                </tr>
+                <tr>
+                    <td>추천 대상</td>
+                    <td>트렌드에 민감한 3040세대</td>
+                    <td>안정적인 장기 보장을 원하는 운전자</td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+
+    <article class="content-card">
+        <h2>운전자보험 가입기간 설정 시 반드시 고려해야 할 5가지</h2>
+        
+        <h3>1. 도로교통법 개정 주기와 특약의 변동성</h3>
+        <p>
+            대한민국의 도로교통법은 민식이법, 윤창호법 등 사회적 요구에 따라 매우 빈번하게 개정됩니다. 운전자보험 가입기간을 너무 길게 설정할 경우, 10년 뒤 개정된 법규에 따른 벌금 상한액이나 합의금 규모를 기존 보험이 따라가지 못할 가능성이 큽니다. 따라서 전문가들은 20년 정도의 기간을 설정하고 주기에 맞춰 리모델링하는 것을 권장합니다.
+        </p>
+
+        <h3>2. 비갱신형과 갱신형의 구조적 차이</h3>
+        <p>
+            운전자보험 가입기간 동안 보험료가 변하지 않는 비갱신형은 초기 보험료가 높지만 총액 측면에서 유리할 수 있습니다. 반면 갱신형은 초기에는 저렴하지만 기간이 지날수록 보험료가 인상될 수 있으므로 본인의 경제적 여건에 맞는 선택이 필요합니다.
+        </p>
+
+        <h3>3. 핵심 특약의 유지 여부</h3>
+        <ul class="info-list">
+            <li>교통사고 처리 지원금 (형사 합의금): 가입 기간 내내 보장 한도가 적절한지 확인해야 합니다.</li>
+            <li>운전자 벌금 (대인/대물): 법정 최고 한도인 3천만 원 이상 설정이 필수입니다.</li>
+            <li>변호사 선임 비용: 최근 5천만 원까지 확대되는 추세입니다.</li>
+            <li>자동차사고 부상 치료비 (자부상): 급수별 지급 금액을 체크하세요.</li>
+        </ul>
+
+        <h3>4. 연령에 따른 만기 설정 전략</h3>
+        <p>
+            고령 운전자의 경우 인지 능력 저하로 인한 사고 발생 확률이 높아지므로, 70세 이후에도 운전을 지속할 계획이라면 80세 만기 상품이 유리합니다. 반면 경제 활동기인 20~50대라면 가성비 좋은 20년 만기 상품을 우선순위에 두는 것이 좋습니다.
+        </p>
+
+        <h3>5. 중복 보장 확인의 중요성</h3>
+        <p>
+            운전자보험은 실손 보장 원칙이 적용되는 특약이 많습니다. 여러 보험에 가입하더라도 실제 발생한 비용만큼만 보장되므로, 가입 기간을 중복해서 설정하지 않도록 주의해야 합니다.
+        </p>
+    </article>
+
+    <article class="content-card">
+        <h2>관련 주제 및 함께 찾는 정보</h2>
+        <div class="keyword-box">
+            <span class="keyword-tag">운전자보험 가입기간 추천</span>
+            <span class="keyword-tag">다이렉트 운전자보험 비교</span>
+            <span class="keyword-tag">자동차보험 운전자보험 차이</span>
+            <span class="keyword-tag">영업용 운전자보험 가입</span>
+            <span class="keyword-tag">부부운전자보험 만기</span>
+            <span class="keyword-tag">운전자보험 형사합의금</span>
+            <span class="keyword-tag">비갱신형 운전자보험 기간</span>
+            <span class="keyword-tag">교통사고처리지원금 한도</span>
+            <span class="keyword-tag">변호사선임비용 특약</span>
+            <span class="keyword-tag">6주미만 교통사고 합의금</span>
+            <span class="keyword-tag">스쿨존 사고 벌금 보장</span>
+            <span class="keyword-tag">운전자보험 1만원대 가입</span>
+            <span class="keyword-tag">2026년 운전자보험 개정</span>
+            <span class="keyword-tag">무면허 음주사고 보장 제외</span>
+            <span class="keyword-tag">가족 일상생활 배상책임</span>
+            <span class="keyword-tag">운전자보험 가입 시 주의사항</span>
+            <span class="keyword-tag">갱신주기 설정 방법</span>
+            <span class="keyword-tag">납입면제 기능 확인</span>
+            <span class="keyword-tag">경찰조사 단계 변호사비용</span>
+            </div>
+    </article>
+
+    <section class="external-links">
+        <h3>공인 기관 및 신뢰성 있는 정보원</h3>
+        <a href="https://www.fss.or.kr" target="_blank" rel="nofollow">금융감독원</a>
+        <a href="https://www.knia.or.kr" target="_blank" rel="nofollow">손해보험협회</a>
+        <a href="https://www.gov.kr" target="_blank" rel="nofollow">정부24(자동차 관련 민원)</a>
+        <a href="https://namu.wiki/w/%EC%9A%B4%EC%A0%84%EC%9E%90%EB%B3%B4%ED%97%98" target="_blank" rel="nofollow">나무위키: 운전자보험</a>
+        <a href="https://www.koroad.or.kr" target="_blank" rel="nofollow">도로교통공단</a>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 운전자보험 정보 가이드 센터. All Rights Reserved.</p>
+        <p style="font-size: 0.8em; margin-top: 10px; opacity: 0.7;">
+            본 페이지에서 제공하는 정보는 일반적인 안내 목적으로 작성되었으며, 실제 보험 가입 시 약관 내용을 반드시 확인하시기 바랍니다.
+        </p>
+    </div>
+</footer>
+
+<script>
+    // 입력 폼 체류 시간 측정을 위한 간단한 로직 (확장 가능)
+    const inputs = document.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            console.log('User is interacting with the form...');
+        });
+    });
+
+    document.querySelector('.btn-submit').addEventListener('click', () => {
+        alert('2026년 최신 운전자보험 비교 분석 리포트를 생성 중입니다. 잠시만 기다려 주세요.');
+    });
+</script>
+
+</body>
 </html>
